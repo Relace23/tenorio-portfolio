@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Hero from './component/Hero'; 
+import Hero from './component/hero'; 
 import About from './component/About';
 
 function App() {
