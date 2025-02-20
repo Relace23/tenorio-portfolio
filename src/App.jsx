@@ -1,11 +1,18 @@
 import React from 'react';
-import Hero from './component/hero'; 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Hero from './component/Hero'; 
+import About from './component/About';
 
 function App() {
     return (
-        <div className="App"> 
-            <Hero />
-        </div>
+        <BrowserRouter>
+          <div className="App">
+            <Routes>
+              <Route path="/" element={<Hero />} />
+              <Route path="/about" element={<About />} />
+            </Routes>
+          </div>
+        </BrowserRouter>
     );
 }
 
