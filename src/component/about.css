@@ -1,25 +1,35 @@
-.about-container {
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #12162d; 
-    color: #d1d1d1; 
-    padding: 100px;
-    height: 100vh; 
+    background-color: #12162d;
+    color: #d1d1d1;
+}
+
+.about-container {
     width: 100vw;
-    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .about-content {
     display: flex;
     align-items: center;
-    justify-content: center; /* Ensures even spacing */
+    justify-content: center;
     max-width: 1000px;
+    width: 90%;
     background: #1a1e36;
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-    gap: 40px; /* Added space between left and right sections */
+    gap: 40px;
 }
 
 .about-left {
@@ -35,7 +45,7 @@
     height: 220px;
     border-radius: 10px;
     object-fit: cover;
-    border: 3px solid #e63946; 
+    border: 3px solid #e63946;
 }
 
 .about-right {
@@ -43,20 +53,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 20px; /* Adjusted to balance spacing */
+    padding-left: 20px;
 }
 
 h1 {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 10px;
-}
-
-.highlight-text {
-    color: #e63946;
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 14px;
 }
 
 .about-info p {
@@ -80,19 +83,16 @@ h1 {
     background: #ff4757;
 }
 
-/* Responsive Fixes */
 @media (max-width: 768px) {
     .about-content {
         flex-direction: column;
         text-align: center;
         padding: 20px;
-        gap: 20px; /* Adjust spacing */
+        gap: 20px;
     }
-    
     .about-right {
         padding-left: 0;
     }
-    
     .profile-img {
         width: 180px;
         height: 180px;
