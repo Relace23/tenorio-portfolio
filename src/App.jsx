@@ -3,7 +3,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-import Hero from './component/Hero';
+import Hero from './component/hero';
 import Blog from './component/Blog';
 import Experience from './component/Experience';
 import Projects from './component/Projects';
