@@ -1,49 +1,85 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./hero.css";
-import Photo from "./profile.jpg";
+import profileImage from "./profile.jpg"; // Adjust the path as needed
 
-function Hero() {
-    const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+const Hero = () => {
+  return (
+    <section className="hero">
+      <nav className="navbar">
+        <ul className="nav-links">
+          <li>
+            <NavLink exact="true" to="/" activeclassname="active">Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/blog" activeclassname="active">Blog</NavLink>
+          </li>
+          <li>
+            <NavLink to="/experience" activeclassname="active">Experience</NavLink>
+          </li>
+          <li>
+            <NavLink to="/projects" activeclassname="active">Projects</NavLink>
+          </li>
+          <li>
+            <NavLink to="/contact" activeclassname="active">Contact</NavLink>
+          </li>
+        </ul>
+      </nav>
 
-    return (
-        <div className="hero-container">
-            {/* Navbar */}
-            <nav className="navbar">
-                <ul className={isMobileMenuOpen ? "nav-menu active" : "nav-menu"}>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <li><Link to="/contact" className="contact-btn">Contact Me</Link></li>
-                </ul>
-                <div className="menu-icon" onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}>
-                    ☰
-                </div>
-            </nav>
+      <div className="hero-container">
+        <motion.div
+          className="hero-content"
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <img src={profileImage} alt="Rel Ace" className="profile-img" />
+          <h2 className="hero-name">Rel Ace A. Tenorio</h2>
+          <p className="hero-role">Aspiring Web Developer & Designer</p>
 
-            {/* Hero Section */}
-            <div className="hero-content">
-                <motion.div 
-                    className="hero-photo"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.8 }}
-                >
-                    <img src={Photo} alt="Rel Ace, Web Developer" />
-                </motion.div>
-                
-                <motion.div 
-                    className="hero-text"
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, delay: 0.3 }}
-                >
-                    <h1><span>Rel Ace A. Tenorio</span></h1>
-                    <p>Aspiring Web Developer & Designer</p>
-                </motion.div>
+          <div className="hero-buttons">
+            <button className="btn primary">View Portfolio</button>
+            <button className="btn secondary">Download CV</button>
+          </div>
+
+          <div className="card about-card">
+            <h3>About Me</h3>
+            <p><strong>Email:</strong> <a href="mailto:relace@example.com">relacetenorio@gmail.com</a></p>
+            <p><strong>Address:</strong> Zamboanga City, Philippines</p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/yourusername" target="_blank" rel="noreferrer">https://github.com/Relace23</a></p>
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="right-content"
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="card skills-card">
+            <h3>My Skills</h3>
+            <div className="skills">
+              <span>React</span>
+              <span>Django</span>
+              <span>JavaScript</span>
+              <span>Python</span>
+              <span>HTML/CSS</span>
+              <span>Git & GitHub</span>
             </div>
-        </div>
-    );
-}
+          </div>
+
+          <div className="card code-card">
+            <pre>{`// Cool Code to describe me
+const name = "Rel Ace";
+const role = "Web Developer";
+const skills = ["React", "Django", "UI/UX"];
+console.log(\`Hi, I'm \${name} — I build with \${skills.join(", ")}\`);`}</pre>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+};
 
 export default Hero;
