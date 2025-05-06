@@ -6,6 +6,11 @@ import './projects.css';
 function Projects() {
   const projects = [
     {
+      name: 'Pokemon Go',
+      description: 'A web game application inspired by the popular Pokemon Go game.',
+      live: 'https://pokedex-rivero.netlify.app/',
+    },
+    {
       name: 'Todo List App',
       description: 'A React-based todo list app with CRUD features.',
       live: 'https://your-todo-app.netlify.app',
@@ -16,11 +21,7 @@ function Projects() {
       live: 'https://tenorio-portfolio.netlify.app/',
     },
     
-    {
-      name: 'Pokemon Go',
-      description: 'A web game application inspired by the popular Pokemon Go game.',
-      live: 'https://pokedex-rivero.netlify.app/',
-    },
+
   ];
 
   return (
