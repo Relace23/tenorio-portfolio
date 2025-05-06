@@ -8,15 +8,18 @@ function Projects() {
     {
       name: 'Todo List App',
       description: 'A React-based todo list app with CRUD features.',
-      repo: 'https://github.com/your-username/todo-app',
       live: 'https://your-todo-app.netlify.app',
+    },
+     {
+      name: 'Portfolio Website',
+      description: 'My portfolio website created using reactjs',
+      live: 'https://tenorio-portfolio.netlify.app/',
     },
     
     {
       name: 'Pokemon Go',
       description: 'A web game application inspired by the popular Pokemon Go game.',
-      repo: 'https://github.com/your-username/pokemon-go-app',
-      live: 'https://pokemon-go-web.netlify.app',
+      live: 'https://pokedex-rivero.netlify.app/',
     },
   ];
 
@@ -63,7 +66,6 @@ function Projects() {
             <h2>{proj.name}</h2>
             <p>{proj.description}</p>
             <div className="project-links">
-              <a href={proj.repo} target="_blank" rel="noopener noreferrer">GitHub</a>
               <a href={proj.live} target="_blank" rel="noopener noreferrer">Live Site</a>
             </div>
           </motion.div>
